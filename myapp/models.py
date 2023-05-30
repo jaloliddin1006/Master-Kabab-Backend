@@ -56,8 +56,8 @@ class Product(models.Model):
     subcategory  = models.ForeignKey(SubCategory,on_delete=models.CASCADE,null=True,blank=True,verbose_name='Subcategory',related_name='products')
     image = models.ImageField(upload_to='my-images',verbose_name="Image",help_text='Upload image',null=True,blank=True)
     about = models.TextField(verbose_name="About",null=True,blank=True)
-    price = models.IntegerField(verbose_name="Price",help_text="Enter price",null=True,blank=True)
-    discount = models.IntegerField(verbose_name="Discount",help_text="Enter discount",null=True,blank=True)     
+    price = models.IntegerField(verbose_name="Price",help_text="Enter price")
+    discount = models.IntegerField(verbose_name="Discount",help_text="Enter discount",default=0)     
     def __str__(self):
         
         if self.name:
