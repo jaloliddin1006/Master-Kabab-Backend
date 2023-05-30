@@ -99,9 +99,9 @@ class OrderItem(models.Model):
     @property
     def shop(self):
         if self.product.discount:
-          return (self.product.price-self.product.discount) * self.quantity
+          return (int(self.product.price)-(self.product.discount)) * int(self.quantity)
         else:
-            return self.product.price * self.quantity
+            return int(self.product.price) * int(self.quantity)
     @property
     def product_id(self):
         return self.product.id
