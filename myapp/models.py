@@ -1,5 +1,4 @@
 from django.db import models
-
 # Create your models here.
 class BotUser(models.Model):
     name  = models.CharField(max_length=150,verbose_name="Name",help_text="Enter name",null=True,blank=True)
@@ -7,6 +6,8 @@ class BotUser(models.Model):
     language = models.CharField(max_length=4,default='uz',verbose_name="Language",help_text="Enter language")
     phone  = models.CharField(max_length=20,verbose_name="Phone number",help_text="Enter phone number",null=True,blank=True)
     added = models.DateTimeField(auto_now_add=True)
+    latitude = models.CharField(max_length=200,null=True,blank=True)
+    longitude= models.CharField(max_length=200,null=True,blank=True)
     def __str__(self) -> str:
         if self.name:
             return self.name

@@ -71,6 +71,16 @@ class ChangePhoneNumber(APIView):
         user.phone = data['phone']
         user.save()
         return Response({'status':'Phone Number changed.'})
+class ChangeAddress(APIView):
+    def post(self,request):
+        data = request.POST
+        data =data.dict()
+        telegram_id = data['telegram_id']
+        user = BotUser.objects.get(telegram_id = telegram_id)
+        user.latitude = data['latitude']
+        user.longitude = data['longitude']
+        user.save()
+        return Response({'status':'Address changed.'})
 class OrderedItems(APIView):
     def post(self,request):
         data =  request.POST
