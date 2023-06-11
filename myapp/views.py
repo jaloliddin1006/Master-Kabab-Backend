@@ -80,7 +80,7 @@ class ChangeAddress(APIView):
         user.latitude = data['latitude']
         user.longitude = data['longitude']
         user.save()
-        return Response({'status':f"Address changed.{user.longitude}{data['latitude']},{data['longitude']}"})
+        return Response({'status':f"Address changed."})
 class OrderedItems(APIView):
     def post(self,request):
         data =  request.POST
