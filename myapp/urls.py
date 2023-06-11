@@ -12,7 +12,7 @@ urlpatterns = [
     path('',include(router.urls)),
     path('change/',ChangeLanguage.as_view()),
     path('phone/',ChangePhoneNumber.as_view()),
-    path('address/',ChangePhoneNumber.as_view()),
+    path('address/',ChangeAddress.as_view()),
     path('shop/',OrderedItems.as_view()),
     path('set_order/',SetOrderItem.as_view()),
     path('delete_basket/',DestroyBasket.as_view()),
